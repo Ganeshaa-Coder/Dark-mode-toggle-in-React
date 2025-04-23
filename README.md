@@ -1,33 +1,17 @@
-# Dark-mode-toggle-in-React
-import React, { useEffect, useState } from 'react';
-import './App.css'; // Add your styles here
+# Dark Mode Toggle in React
 
-function App() {
-  const [theme, setTheme] = useState('light');
+This is a simple React application demonstrating a dark mode/light mode toggle feature.
 
-  // Load theme from localStorage on first render
-  useEffect(() => {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    setTheme(savedTheme);
-    document.body.className = savedTheme;
-  }, []);
+## Features
 
-  // Toggle theme and save to localStorage
-  const toggleTheme = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    document.body.className = newTheme;
-    localStorage.setItem('theme', newTheme);
-  };
+*   Toggles between light and dark themes.
+*   Persists the selected theme using `localStorage`.
+*   Updates the `document.body.className` to reflect the current theme.
 
-  return (
-    <div className="app">
-      <h1>Dark Mode Toggle</h1>
-      <button onClick={toggleTheme}>
-        Switch to {theme === 'light' ? 'Dark' : 'Light'} Mode
-      </button>
-    </div>
-  );
-}
+## Running the Project
 
-export default App;
+(Instructions would typically go here, e.g., how to install dependencies and start the development server)
+
+## Testing
+
+Tests are located in `src/App.test.js` and use React Testing Library.
